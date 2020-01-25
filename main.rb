@@ -3,8 +3,6 @@
 puts 'STARTING'
 
 require_relative './bootstrap'
-require 'httparty'
-require 'json'
 
 frames_mutex = Mutex.new
 frames = []

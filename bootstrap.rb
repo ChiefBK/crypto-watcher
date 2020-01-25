@@ -12,9 +12,8 @@ if ENV['DEVELOPMENT_MODE']
   require 'pry-nav'
 end
 
-require 'bigdecimal'
-
-
+require 'httparty'
+require 'json'
 
 # INTERNAL DEPENDENCIES
 
