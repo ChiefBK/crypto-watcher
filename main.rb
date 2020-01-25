@@ -42,5 +42,3 @@ frame_fetcher_thread.join
 frame_display_thread.join
 
 puts 'THE END'
-
-
