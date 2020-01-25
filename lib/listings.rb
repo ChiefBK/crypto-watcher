@@ -2,7 +2,7 @@
 
 # Methods and Classes related to Listings
 module Listings
-  def self.fetch_listings
+  def self.fetch
     response = HTTParty.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',
       headers: {
         'Accept' => 'application/json',

@@ -9,7 +9,7 @@ frames = []
 
 def fetch_data
   puts 'fetching frames...'
-  listings = Listings.fetch_listings
+  listings = Listings.fetch
   frames = Frames.create_frames(listings)
 
   puts "fetched #{listings.size} listings - created #{frames.size} frames"
