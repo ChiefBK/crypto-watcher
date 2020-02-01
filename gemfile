@@ -1,0 +1,15 @@
+# frozen_string_literal: true
+
+gem 'dotenv'
+
+if ENV['DEVELOPMENT_MODE']
+  # Use binding.pry debugger
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'pry-nav'
+end
+
+gem 'httparty'
+gem 'faye'
+gem 'faye-websocket'
+gem 'thin'

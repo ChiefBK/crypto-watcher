@@ -13,7 +13,6 @@ if ENV['DEVELOPMENT_MODE']
 end
 
 require 'httparty'
-require 'json'
 
 # INTERNAL DEPENDENCIES
 
