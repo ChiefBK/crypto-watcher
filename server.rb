@@ -67,10 +67,8 @@ Sec-WebSocket-Accept: #{ response_key }
 
   STDERR.puts "Handshake completed. Starting to parse the websocket frame."
 
-  socket.write small_frame
-  # socket.write small_frame2
   big_frame = create_frame("test frame which is larger than 127 characters long this is one big one here folks ok lets just copy paste this then test frametest frametest frametest frametest frametest frametest frametest frame test frame which is larger than 127 characters long this is one big one here folks ok lets just copy paste this then test frametest frametest frametest frametest frametest frametest frametest frame")
-  bytes_writen = socket.write big_frame
+  socket.write big_frame
 
 
   # first_byte = socket.getbyte
