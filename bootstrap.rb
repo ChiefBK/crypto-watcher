@@ -12,7 +12,9 @@ if ENV['DEVELOPMENT_MODE']
   require 'pry-nav'
 end
 
-require 'httparty'
+require 'httparty' # for sending HTTP requests
+require 'socket' # for TCP webserver
+require 'digest/sha1' # to generate response key for websocket handshake
 
 # INTERNAL DEPENDENCIES
 

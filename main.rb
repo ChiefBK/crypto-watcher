@@ -4,41 +4,53 @@ puts 'STARTING'
 
 require_relative './bootstrap'
 
-frames_mutex = Mutex.new
-frames = []
+screens_mutex = Mutex.new
+screens = []
 
 def fetch_data
   puts 'fetching frames...'
   listings = Listings.fetch
-  frames = Frames.create_frames(listings)
+  screens = Screens.create_screens(listings)
 
-  puts "fetched #{listings.size} listings - created #{frames.size} frames"
-  frames
+  puts "fetched #{listings.size} listings - created #{screens.size} frames"
+  screens
 end
 
 frame_fetcher_thread = Thread.new do
   loop do
-    frames_mutex.lock
-    frames = fetch_data
+    screens_mutex.lock
+    screens = fetch_data
     puts 'frames updated'
-    frames_mutex.unlock
-    sleep ENV['FETCH_DURATION'].to_i # fetch every 5 minutes
+    screens_mutex.unlock
+    sleep ENV['FETCH_DURATION'].to_i # fetch every so many seconds
   end
 end
 
-frame_display_thread = Thread.new do
-  loop do
-    frames_mutex.lock
-    frames.each do |frame|
-      puts frame
+server = TCPServer.new('localhost', 2345)
+
+loop do
+
+  socket = server.accept
+  STDERR.puts "Incoming Request"
+
+  Thread.new do
+    Websockets.accept_and_upgrade_connection(socket)
+
+    screen_index = 0
+    loop do
+      screens_mutex.lock
+      screen_to_send = screens[screen_index]
+      Websockets.send_frame(screen_to_send.to_json, socket)
+      screens_mutex.unlock
+
+
+      screen_index += 1
+      screen_index = 0 if screen_index > screens.size
       sleep ENV['FRAME_DURATION'].to_i
     end
-    frames_mutex.unlock
-    sleep 1 # give other thread some time to lock mutex
   end
 end
 
 frame_fetcher_thread.join
-frame_display_thread.join
 
 puts 'THE END'

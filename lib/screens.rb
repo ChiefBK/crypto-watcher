@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 # Methods and Classes related to Frames
-module Frames
+module Screens
   # A class which represents what is shown on the LED display
-  class Frame
+  class Screen
     def initialize(listing, net_percentage, duration)
       @rank = listing.rank
       @symbol = listing.symbol
@@ -39,16 +39,26 @@ module Frames
 
     def to_s
       "#{rank} #{price} #{percentage}\n"\
-    "#{symbol} #{currency_code} #{@duration}\n"
+      "#{symbol} #{currency_code} #{@duration}\n"
+    end
+
+    def to_hash
+      hash = {}
+      instance_variables.each { |var| hash[var.to_s.delete('@')] = instance_variable_get(var) }
+      hash
+    end
+
+    def to_json
+      to_hash.to_json
     end
   end
 
   class << self
-    def create_frames(listings)
+    def create_screens(listings)
       new_frames = []
 
       listings.each do |listing|
-        frames_for_listing = generate_frames_for_listing(listing)
+        frames_for_listing = generate_screens_for_listing(listing)
         new_frames += frames_for_listing
       end
 
@@ -57,15 +67,15 @@ module Frames
 
     private
 
-    def generate_frames_for_listing(listing)
-      frames = []
-      frames_for_listing = [[:percent_change_1h, '1h'], [:percent_change_24h, '24h'], [:percent_change_7d, '7d']]
+    def generate_screens_for_listing(listing)
+      screens = []
+      screens_for_listing = [[:percent_change_1h, '1h'], [:percent_change_24h, '24h'], [:percent_change_7d, '7d']]
 
-      frames_for_listing.each do |f|
-        frames.push(Frame.new(listing, listing.send(f[0]), f[1]))
+      screens_for_listing.each do |f|
+        screens.push(Screen.new(listing, listing.send(f[0]), f[1]))
       end
 
-      frames
+      screens
     end
   end
 
