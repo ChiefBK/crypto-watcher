@@ -27,7 +27,6 @@ Percentage.prototype.toString = function () {
 const exampleSocket = new WebSocket("ws://localhost:2345");
 
 exampleSocket.onopen = function (event) {
-    // exampleSocket.send("Can you hear me?");
     console.log("opened websocket")
 };
 exampleSocket.onmessage = function (event) {
@@ -41,6 +40,7 @@ exampleSocket.onmessage = function (event) {
 
     const percentChange = Percentage(screen_obj.net_percentage);
 
+    document.getElementById("rank").innerHTML = screen_obj.rank;
     document.getElementById("price").innerHTML = Formatter(screen_obj.price).currency();
     document.getElementById("symbol").innerHTML = screen_obj.symbol;
     document.getElementById("currency-code").innerHTML = screen_obj.currency_code;
