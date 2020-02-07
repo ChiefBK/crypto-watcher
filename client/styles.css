@@ -1,0 +1,32 @@
+.ticker__arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid green;
+    position: absolute;
+    left: 100%;
+    top: 33%;
+    display: none;
+}
+
+.ticker__arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid red;
+    position: absolute;
+    left: 100%;
+    top: 33%;
+    display: none;
+}
+
+.ticker__container {
+    display: flex;
+}
+
+.ticker__column {
+    position: relative;
+    padding: 15px 10px
+}

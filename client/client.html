@@ -3,42 +3,8 @@
 <head>
   <title>Websocket Client</title>
 </head>
-<style>
-  .ticker__arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 20px solid green;
-    position: absolute;
-    left: 100%;
-    top: 33%;
-    display: none;
-  }
-
-  .ticker__arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid red;
-    position: absolute;
-    left: 100%;
-    top: 33%;
-    display: none;
-  }
-
-  .ticker__container {
-    display: flex;
-  }
-
-  .ticker__column {
-    position: relative;
-    padding: 15px 10px
-  }
-</style>
+<link rel="stylesheet" type="text/css" href="styles.css">
 <body>
-
   <div class="ticker__container">
     <div class="ticker__column">
       <p id="symbol">BCH</p>
@@ -54,31 +20,6 @@
       <div class="ticker__arrow-down"></div>
     </div>
   </div>
-
-<script>
-  var exampleSocket = new WebSocket("ws://localhost:2345");
-  exampleSocket.onopen = function (event) {
-    // exampleSocket.send("Can you hear me?");
-    console.log("opened websocket")
-  };
-  exampleSocket.onmessage = function (event) {
-    console.log(event.data);
-
-    const screen_obj = JSON.parse(event.data);
-    document.getElementById("price").innerHTML = screen_obj.price;
-    document.getElementById("symbol").innerHTML = screen_obj.symbol;
-    document.getElementById("currency-code").innerHTML = screen_obj.currency_code;
-    document.getElementById("net-percentage").innerHTML = screen_obj.net_percentage;
-    document.getElementById("duration").innerHTML = screen_obj.duration;
-  };
-  exampleSocket.onerror = function (event) {
-    console.log('WebSocket error: ', event);
-  };
-  exampleSocket.onclose = function (event) {
-    console.log("closed websocket: ", event)
-  }
-  //
-  // exampleSocket.send("test");
-</script>
 </body>
 </html>
+<script src="myscripts.js"></script>
