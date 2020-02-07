@@ -46,6 +46,18 @@ exampleSocket.onmessage = function (event) {
     document.getElementById("currency-code").innerHTML = screen_obj.currency_code;
     document.getElementById("net-percentage").innerHTML = percentChange.toString();
     document.getElementById("duration").innerHTML = screen_obj.duration;
+
+    const arrowUpElement = document.getElementById("arrow-up");
+    const arrowDownElement = document.getElementById("arrow-down");
+
+    if (percentChange.isPositive()) {
+        arrowUpElement.style.visibility = "visible";
+        arrowDownElement.style.visibility = "hidden";
+    }
+    else {
+        arrowUpElement.style.visibility = "hidden";
+        arrowDownElement.style.visibility = "visible";
+    }
 };
 exampleSocket.onerror = function (event) {
     console.log('WebSocket error: ', event);

@@ -5,9 +5,9 @@
     border-right: 20px solid transparent;
     border-bottom: 20px solid green;
     position: absolute;
-    left: 100%;
-    top: 33%;
-    display: none;
+    left: 25%;
+    top: 35%;
+    visibility: hidden;
 }
 
 .ticker__arrow-down {
@@ -17,9 +17,9 @@
     border-right: 20px solid transparent;
     border-top: 20px solid red;
     position: absolute;
-    left: 100%;
-    top: 33%;
-    display: none;
+    left: 25%;
+    top: 35%;
+    visibility: hidden;
 }
 
 .ticker__container {
