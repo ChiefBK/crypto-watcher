@@ -10,8 +10,6 @@ export function start() {
         console.log("opened websocket")
     };
     exampleSocket.onmessage = function (event) {
-        console.log(event.data);
-
         const screen_obj = JSON.parse(event.data);
 
         if(screen_obj == null) {
