@@ -3,7 +3,7 @@
 <head>
   <title>Websocket Client</title>
 </head>
-<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:2345/public/styles.css">
 <body>
   <div class="ticker__container">
     <div class="ticker__column">
@@ -25,4 +25,8 @@
   </div>
 </body>
 </html>
-<script src="websocket.js"></script>
+<script type="module" src="http://localhost:2345/public/websocket.js"></script>
+<script type="module">
+  import { start } from "/public/websocket.js";
+  start();
+</script>

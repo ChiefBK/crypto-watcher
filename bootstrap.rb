@@ -15,6 +15,7 @@ end
 require 'httparty' # for sending HTTP requests
 require 'socket' # for TCP webserver
 require 'digest/sha1' # to generate response key for websocket handshake
+require 'date' # for datetime in http response
 
 # INTERNAL DEPENDENCIES
 
