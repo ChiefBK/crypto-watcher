@@ -9,4 +9,4 @@
 ```
 ruby main.rb
 ```
-2. Open `/client/client.html` in browser
+2. Open `localhost:2345` in browser
