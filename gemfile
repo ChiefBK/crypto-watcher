@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+source 'https://rubygems.org'
+
 gem 'dotenv'
 
-if ENV['DEVELOPMENT_MODE']
+group :development do
   # Use binding.pry debugger
   gem 'pry'
   gem 'pry-remote'
