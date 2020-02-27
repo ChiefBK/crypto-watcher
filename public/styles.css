@@ -29,11 +29,17 @@
 }
 
 .ticker__column {
-    flex: 1;
-    position: relative;
-    padding: 15px 10px
+    text-align: center;
 }
 
 p {
     font-family: "Lucida Console", Monaco, monospace;
+}
+
+.full-page-height {
+    height: 100vh;
+}
+
+.full-parent-height {
+    height: 100%;
 }

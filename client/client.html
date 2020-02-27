@@ -1,29 +1,47 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Websocket Client</title>
+  <title>Crypto Watcher</title>
 </head>
+
+<link rel="stylesheet" type="text/css" href="http://localhost:2345/public/canvas.css">
+<link rel="stylesheet" href="http://localhost:2345/public/bootstrap.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="http://localhost:2345/public/dark.css">
+<link rel="stylesheet" href="http://localhost:2345/public/font-icons.css" type="text/css" />
+<link rel="stylesheet" href="http://localhost:2345/public/animate.css" type="text/css" />
+<link rel="stylesheet" href="http://localhost:2345/public/magnific-popup.css" type="text/css" />
+
 <link rel="stylesheet" type="text/css" href="http://localhost:2345/public/styles.css">
-<body>
-  <div class="ticker__container">
-    <div class="ticker__column">
-      <p id="rank"></p>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<body class="full-page-height">
+
+  <section id="content" class="full-parent-height">
+    <div class="container full-parent-height">
+      <div class="row align-items-center full-parent-height">
+        <div class="col-sm align-self-center ticker__column">
+          <p id="rank"></p>
+        </div>
+        <div class="col-sm align-self-center ticker__column">
+          <p id="symbol"></p>
+        </div>
+        <div class="col-sm align-self-center ticker__column">
+          <p id="price"></p>
+          <p id="currency-code"></p>
+        </div>
+        <div class="col-sm align-self-center ticker__column">
+          <p id="net-percentage"></p>
+          <p id="duration"></p>
+          <div id="arrow-up" class="ticker__arrow-up"></div>
+          <div id="arrow-down" class="ticker__arrow-down"></div>
+        </div>
+      </div>
     </div>
-    <div class="ticker__column">
-      <p id="symbol"></p>
-    </div>
-    <div class="ticker__column">
-      <p id="price"></p>
-      <p id="currency-code"></p>
-    </div>
-    <div class="ticker__column">
-      <p id="net-percentage"></p>
-      <p id="duration"></p>
-      <div id="arrow-up" class="ticker__arrow-up"></div>
-      <div id="arrow-down" class="ticker__arrow-down"></div>
-    </div>
-  </div>
+  </section>
+
 </body>
+
 </html>
 <script type="module" src="http://localhost:2345/public/websocket.js"></script>
 <script type="module">
