@@ -5,8 +5,8 @@
     border-right: 20px solid transparent;
     border-bottom: 20px solid green;
     position: absolute;
-    left: 25%;
-    top: 35%;
+    left: 70%;
+    top: 45%;
     visibility: hidden;
 }
 
@@ -17,8 +17,8 @@
     border-right: 20px solid transparent;
     border-top: 20px solid red;
     position: absolute;
-    left: 25%;
-    top: 35%;
+    left: 70%;
+    top: 45%;
     visibility: hidden;
 }
 

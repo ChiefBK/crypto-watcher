@@ -4,8 +4,10 @@
   <title>Crypto Watcher</title>
 </head>
 
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="http://localhost:2345/public/canvas.css">
 <link rel="stylesheet" href="http://localhost:2345/public/bootstrap.css" type="text/css" />
+<link rel="stylesheet" href="http://localhost:2345/public/responsive.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="http://localhost:2345/public/dark.css">
 <link rel="stylesheet" href="http://localhost:2345/public/font-icons.css" type="text/css" />
 <link rel="stylesheet" href="http://localhost:2345/public/animate.css" type="text/css" />
@@ -20,19 +22,19 @@
   <section id="content" class="full-parent-height">
     <div class="container full-parent-height">
       <div class="row align-items-center full-parent-height">
-        <div class="col-sm align-self-center ticker__column">
-          <p id="rank"></p>
+        <div class="col-sm align-self-center ticker__column section nobg">
+          <p id="rank" data-animate="bounceInUp">WELCOME</p>
         </div>
-        <div class="col-sm align-self-center ticker__column">
-          <p id="symbol"></p>
+        <div class="col-sm align-self-center ticker__column section nobg">
+          <p id="symbol" data-animate="bounceInUp">TO</p>
         </div>
-        <div class="col-sm align-self-center ticker__column">
-          <p id="price"></p>
-          <p id="currency-code"></p>
+        <div class="col-sm align-self-center ticker__column section nobg">
+          <p id="price" data-animate="bounceInUp">THE</p>
+          <p id="currency-code" data-animate="bounceInUp">JUNGLE</p>
         </div>
-        <div class="col-sm align-self-center ticker__column">
-          <p id="net-percentage"></p>
-          <p id="duration"></p>
+        <div class="col-sm align-self-center ticker__column section nobg">
+          <p id="net-percentage" data-animate="bounceInUp">aaaaa</p>
+          <p id="duration" data-animate="bounceInUp">HHHHH</p>
           <div id="arrow-up" class="ticker__arrow-up"></div>
           <div id="arrow-down" class="ticker__arrow-down"></div>
         </div>
@@ -46,5 +48,5 @@
 <script type="module" src="http://localhost:2345/public/websocket.js"></script>
 <script type="module">
   import { start } from "/public/websocket.js";
-  start();
+  start(true);
 </script>
